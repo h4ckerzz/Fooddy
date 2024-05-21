@@ -30,6 +30,13 @@ val Typography = Typography(
         fontWeight = FontWeight(600),
         fontSize = 18.sp,
         color = Color(0xFF000000)
+    ),
+    labelMedium = TextStyle(
+        fontSize = 15.sp,
+        fontFamily = FontFamily(Font(R.font.roboto_bold)),
+        fontWeight = FontWeight(600),
+        color = Color(0xFF000000),
     )
+
 
 )

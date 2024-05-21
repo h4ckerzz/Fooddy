@@ -1,4 +1,4 @@
-package com.example.fooddy
+package com.example.fooddy.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,7 +23,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.fooddy.ui.components.EmailTextField
+import com.example.fooddy.R
+import com.example.fooddy.ui.components.SingleLineUnderlineTextField
 import com.example.fooddy.ui.components.roundedShape
 import com.example.fooddy.ui.theme.Typography
 
@@ -66,7 +67,8 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                  }
                 }
             Spacer(modifier = Modifier.height(65.dp))
-            EmailTextField()
+            SingleLineUnderlineTextField("Email Address")
+            SingleLineUnderlineTextField("PassWord")
             }
         }
     }
