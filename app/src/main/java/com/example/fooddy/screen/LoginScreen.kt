@@ -10,7 +10,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -50,12 +53,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     modifier = Modifier
                         .size(width = 130.dp, 160.dp)
                         .align(Alignment.Center)
-                    )
+                )
                 Row(
                     modifier.fillMaxSize(1f),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.Bottom
-                    ) { 
+                ) {
 
                     TextButton(onClick = { /*TODO*/ }, modifier.weight(1f)) {
                         Text(text = "Login", style = Typography.labelSmall)
@@ -64,14 +67,36 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     TextButton(onClick = { /*TODO*/ }, modifier.weight(1f)) {
                         Text(text = "Sign-up", style = Typography.labelSmall)
                     }
-                 }
                 }
+            }
             Spacer(modifier = Modifier.height(65.dp))
             SingleLineUnderlineTextField("Email Address")
             SingleLineUnderlineTextField("PassWord")
+            Spacer(modifier = Modifier.height(20.dp))
+            TextButton(onClick = { /*TODO*/ }, modifier = Modifier.padding(start = 50.dp)) {
+                Text(text = "Forgot Password?", style = Typography.bodySmall)
+            }
+            Spacer(modifier = Modifier.height(80.dp))
+            TextButton(
+                onClick = {},
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .width(315.dp)
+                    .height(70.dp)
+                    .background(
+                        color = Color(0xFFFA4A0C),
+                        shape = RoundedCornerShape(30.dp)
+                    )
+
+            ) {
+                Text(
+                    text = "Login",
+                    style = Typography.labelSmall.copy(color = Color(0xFFF6F6F9))
+                )
             }
         }
     }
+}
 
 
 @Preview

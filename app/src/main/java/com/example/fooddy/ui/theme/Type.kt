@@ -25,6 +25,12 @@ val Typography = Typography(
         fontSize = 24.sp,
         color = Color(0xFFFF460A)
     ),
+    bodySmall = TextStyle(
+        fontFamily = FontFamily(Font(R.font.roboto_medium)),
+        fontWeight = FontWeight(600),
+        fontSize = 16.sp,
+        color = Color(0xFFFF460A)
+    ),
     labelSmall = TextStyle(
         fontFamily = FontFamily(Font(R.font.roboto_bold)),
         fontWeight = FontWeight(600),
