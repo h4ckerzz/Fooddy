@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Fooddy</string>
-    <string name="title_start_screen">Food for \nEveryone</string>
-
+    <string name="title_home_screen">Delicious \nfood for you</string>
+    <string name="title_start_screen">Food for \nEveryon</string>
 </resources>
