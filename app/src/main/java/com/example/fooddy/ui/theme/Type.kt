@@ -6,6 +6,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.example.fooddy.R
 
@@ -38,7 +39,7 @@ val Typography = Typography(
         color = Color(0xFF000000)
     ),
     labelMedium = TextStyle(
-        fontSize = 15.sp,
+        fontSize = 16.sp,
         fontFamily = FontFamily(Font(R.font.roboto_bold)),
         fontWeight = FontWeight(600),
         color = Color(0xFF000000),
@@ -48,6 +49,20 @@ val Typography = Typography(
         fontFamily = FontFamily(Font(R.font.roboto_bold)),
         fontWeight = FontWeight(700),
         color = Color(0xFF000000)
+    ),
+    titleSmall = TextStyle(
+        fontSize = 18.sp,
+        fontFamily = FontFamily(Font(R.font.roboto_medium)),
+        fontWeight = FontWeight(400),
+        color = Color(0xFF9A9A9D)
+    ),
+    bodyMedium = TextStyle(
+        fontSize = 24.sp,
+        lineHeight = 22.29.sp,
+        fontFamily = FontFamily(Font(R.font.roboto_medium)),
+        color = Color(0xFF000000),
+        textAlign = TextAlign.Center,
+        fontWeight = FontWeight(600)
     )
 
 

@@ -5,11 +5,23 @@ import com.example.fooddy.model.Food
 
 object LocalFoodDataProvider {
     val defaultFood = getFoodData()[0]
-    private fun getFoodData() : List<Food> {
+    fun getFoodData() : List<Food> {
         return listOf(
-            Food(imageResId = R.drawable.image_1, nameFood = "Rice", price = 30000 ),
-            Food(imageResId = R.drawable.image_2, nameFood ="Chicken", price = 50000),
-            Food(imageResId = R.drawable.image_3, nameFood = "Rice and Chicken", price = 40000)
+            Food(imageResId = R.drawable.tomato, nameFoodId = R.string.veggie_tomato_mix, price = "5$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+
         )
+    }
+    fun getFavouriteFoodData() : List<Food> {
+        return favouriteList
+    }
+    val favouriteList = mutableListOf<Food>(defaultFood)
+    fun addFoodToFavourite(food: Food) {
+        favouriteList.add(food)
+    }
+    fun removeFoodFromFavourite(food: Food) {
+        favouriteList.remove(food)
     }
 }
