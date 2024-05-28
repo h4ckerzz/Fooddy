@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
@@ -35,6 +34,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.fooddy.R
 import com.example.fooddy.data.LocalFoodDataProvider
 import com.example.fooddy.ui.components.BottomNavigationBar
@@ -43,7 +44,7 @@ import com.example.fooddy.ui.theme.Typography
 
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     val foodList = LocalFoodDataProvider.getFoodData()
     var text by remember { mutableStateOf("") }
     val scrollState = rememberScrollState()
@@ -127,14 +128,16 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.height(20.dp))
             Row(
                 horizontalArrangement = Arrangement.spacedBy(30.dp),
-                modifier = Modifier.horizontalScroll(scrollState).padding(20.dp)
+                modifier = Modifier
+                    .horizontalScroll(scrollState)
+                    .padding(20.dp)
             ) {
                 for (food in foodList) {
                     BoxFood(food = food)
             }
         }
             Spacer(modifier = Modifier.height(45.dp))
-            BottomNavigationBar()
+            BottomNavigationBar(navController = navController)
     }
     }
 }
@@ -144,6 +147,6 @@ fun HomeScreen() {
 @Composable
 fun HomeScreenPreview() {
     Surface {
-        HomeScreen()
+        HomeScreen(navController = rememberNavController())
     }
 }

@@ -24,11 +24,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.fooddy.FooddyScreen
 import com.example.fooddy.R
 import com.example.fooddy.ui.theme.Typography
 
 @Composable
-fun StartScreen(onClick: () -> Unit) {
+fun StartScreen(onClick: () -> Unit, navController: NavController) {
     Surface(
         modifier = Modifier.fillMaxHeight(),
         color = Color(0xFFFF4B3A)
@@ -77,7 +80,7 @@ fun StartScreen(onClick: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(30.dp))
             TextButton(
-                onClick = onClick,
+                onClick = { navController.navigate(FooddyScreen.LOGIN.name) },
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .width(315.dp)
@@ -105,6 +108,6 @@ fun StartScreen(onClick: () -> Unit) {
 @Composable
 fun StartScreenPreview() {
     Surface {
-        StartScreen(onClick = {})
+        StartScreen(onClick = {}, navController = rememberNavController())
     }
 }

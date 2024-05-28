@@ -4,10 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.example.fooddy.data.LocalFoodDataProvider
+import com.example.fooddy.screen.FavouriteScreen
 import com.example.fooddy.screen.HomeScreen
 import com.example.fooddy.ui.theme.FooddyTheme
 
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color(0xFFF2F2F2)
                 ) {
-                        HomeScreen()
+                        FooddyApp()
                 }
             }
         }

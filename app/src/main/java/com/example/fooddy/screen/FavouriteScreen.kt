@@ -1,5 +1,6 @@
 package com.example.fooddy.screen
 
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -22,6 +24,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.fooddy.FooddyScreen
 import com.example.fooddy.R
 import com.example.fooddy.data.LocalFoodDataProvider
 import com.example.fooddy.model.Food
@@ -30,16 +35,18 @@ import com.example.fooddy.ui.theme.Typography
 
 
 @Composable
-fun FavouriteScreen(
-    food: List<Food> = LocalFoodDataProvider.getFoodData()
-) {
-    Column(modifier = Modifier.fillMaxSize(1f)) {
+fun FavouriteScreen(navController: NavController) {
+    val food: List<Food> = LocalFoodDataProvider.favouriteList
+    val scrollState = rememberScrollState()
+    Column(modifier = Modifier
+        .fillMaxSize(1f)
+        .horizontalScroll(scrollState)) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .padding(top = 60.dp)
                 .fillMaxWidth(1f)) {
-            IconButton(onClick = { /*TODO*/ }, modifier = Modifier.padding(start = 40.dp)) {
+            IconButton(onClick = { navController.navigate(FooddyScreen.HOME.name) }, modifier = Modifier.padding(start = 40.dp)) {
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.back_icon),
                     contentDescription = "Back Icon Button"
@@ -63,6 +70,6 @@ fun FavouriteScreen(
 @Composable
 fun FavouriteScreenPreview() {
     Surface(color = MaterialTheme.colorScheme.background) {
-        FavouriteScreen()
+        FavouriteScreen(navController = rememberNavController())
     }
 }

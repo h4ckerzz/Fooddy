@@ -11,13 +11,19 @@ object LocalFoodDataProvider {
             Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
             Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
             Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
+            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = "10$" ),
 
         )
     }
     fun getFavouriteFoodData() : List<Food> {
         return favouriteList
     }
-    val favouriteList = mutableListOf<Food>(defaultFood)
+    val favouriteList = mutableListOf<Food>()
     fun addFoodToFavourite(food: Food) {
         favouriteList.add(food)
     }

@@ -2,6 +2,7 @@ package com.example.fooddy.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.interaction.DragInteraction
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,13 +27,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.fooddy.FooddyScreen
 import com.example.fooddy.R
 import com.example.fooddy.ui.components.SingleLineUnderlineTextField
 import com.example.fooddy.ui.components.roundedShape
 import com.example.fooddy.ui.theme.Typography
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(navController: NavController,modifier: Modifier = Modifier) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = Color(0xFFF2F2F2)
@@ -78,7 +82,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             }
             Spacer(modifier = Modifier.height(80.dp))
             TextButton(
-                onClick = {},
+                onClick = { navController.navigate(FooddyScreen.HOME.name)},
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .width(315.dp)
@@ -102,5 +106,5 @@ fun LoginScreen(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen()
+    LoginScreen(navController = rememberNavController())
 }

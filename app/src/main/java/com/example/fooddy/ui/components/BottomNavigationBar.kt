@@ -15,22 +15,27 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.fooddy.FooddyScreen
 import com.example.fooddy.R
+import com.example.fooddy.data.LocalFoodDataProvider
+import com.example.fooddy.screen.FavouriteScreen
 
 @Composable
-fun BottomNavigationBar() {
+fun BottomNavigationBar(navController: NavController) {
     var selectedIndex by remember { mutableStateOf(0) }
     Row(
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = Modifier.fillMaxWidth(1f)
     ) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = {navController.navigate(FooddyScreen.HOME.name) }) {
             Icon(imageVector = ImageVector.vectorResource(id = R.drawable.home), contentDescription = "Home Icon")
         }
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = { navController.navigate(FooddyScreen.FAVOURITE.name)}) {
             Icon(imageVector = ImageVector.vectorResource(id = R.drawable.heart), contentDescription = "Heart Icon")
         }
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick ={ }) {
             Icon(imageVector = ImageVector.vectorResource(id = R.drawable.user), contentDescription = "History Icon")
         }
         IconButton(onClick = { /*TODO*/ }) {
@@ -44,6 +49,6 @@ fun BottomNavigationBar() {
 @Composable
 fun BottomNavigationBarPreview() {
     Surface(modifier = Modifier.fillMaxWidth(1f)) {
-    BottomNavigationBar()
+    BottomNavigationBar(navController = rememberNavController())
     }
 }
