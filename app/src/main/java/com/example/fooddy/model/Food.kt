@@ -6,5 +6,5 @@ import androidx.annotation.StringRes
 data class Food(
     @DrawableRes val imageResId: Int,
     @StringRes val nameFoodId: Int,
-    val price: String
+    val price: Int
 )

@@ -24,7 +24,6 @@ import com.example.fooddy.screen.FavouriteScreen
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
-    var selectedIndex by remember { mutableStateOf(0) }
     Row(
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = Modifier.fillMaxWidth(1f)
@@ -35,7 +34,7 @@ fun BottomNavigationBar(navController: NavController) {
         IconButton(onClick = { navController.navigate(FooddyScreen.FAVOURITE.name)}) {
             Icon(imageVector = ImageVector.vectorResource(id = R.drawable.heart), contentDescription = "Heart Icon")
         }
-        IconButton(onClick ={ }) {
+        IconButton(onClick ={navController.navigate(FooddyScreen.PROFILE.name)}) {
             Icon(imageVector = ImageVector.vectorResource(id = R.drawable.user), contentDescription = "History Icon")
         }
         IconButton(onClick = { /*TODO*/ }) {

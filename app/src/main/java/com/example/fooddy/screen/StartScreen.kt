@@ -89,7 +89,6 @@ fun StartScreen(onClick: () -> Unit, navController: NavController) {
                         color = Color(0xFFFFFFFF),
                         shape = RoundedCornerShape(30.dp)
                     )
-
             ) {
                 Text(
                     text = "Get Started",

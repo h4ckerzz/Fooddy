@@ -53,7 +53,7 @@ fun RowFood(food: Food) {
                 modifier = Modifier.fillMaxWidth(1f)
             )
             Spacer(modifier = Modifier.height(10.dp))
-            Text(text = food.price, style = Typography.bodySmall)
+            Text(text = "${food.price}$", style = Typography.bodySmall)
         }
     }
 }
@@ -61,5 +61,5 @@ fun RowFood(food: Food) {
 @Preview
 @Composable
 fun RowFoodPreview() {
-    RowFood(food = LocalFoodDataProvider.defaultFood)
+        RowFood(food = LocalFoodDataProvider.defaultFood)
 }

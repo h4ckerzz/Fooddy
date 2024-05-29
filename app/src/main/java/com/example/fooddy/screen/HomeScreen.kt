@@ -36,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.fooddy.FooddyScreen
 import com.example.fooddy.R
 import com.example.fooddy.data.LocalFoodDataProvider
 import com.example.fooddy.ui.components.BottomNavigationBar
@@ -64,7 +65,7 @@ fun HomeScreen(navController: NavController) {
                         modifier = Modifier.padding()
                         )
                 }
-                IconButton(onClick = { /*TODO*/ }, modifier = Modifier.padding(start = 170.dp)) {
+                IconButton(onClick = { navController.navigate(FooddyScreen.ORDER.name) }, modifier = Modifier.padding(start = 170.dp)) {
                     Image(painter = painterResource(id = R.drawable.shopping_cart), contentDescription = "shopping icon")
                 }
             }

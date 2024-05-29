@@ -80,7 +80,7 @@ fun LoginScreen(navController: NavController,modifier: Modifier = Modifier) {
             TextButton(onClick = { /*TODO*/ }, modifier = Modifier.padding(start = 50.dp)) {
                 Text(text = "Forgot Password?", style = Typography.bodySmall)
             }
-            Spacer(modifier = Modifier.height(80.dp))
+            Spacer(modifier = Modifier.height(100.dp))
             TextButton(
                 onClick = { navController.navigate(FooddyScreen.HOME.name)},
                 modifier = Modifier
@@ -91,7 +91,6 @@ fun LoginScreen(navController: NavController,modifier: Modifier = Modifier) {
                         color = Color(0xFFFA4A0C),
                         shape = RoundedCornerShape(30.dp)
                     )
-
             ) {
                 Text(
                     text = "Login",

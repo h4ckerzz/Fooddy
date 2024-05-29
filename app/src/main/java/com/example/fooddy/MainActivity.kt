@@ -7,9 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.example.fooddy.data.LocalFoodDataProvider
-import com.example.fooddy.screen.FavouriteScreen
-import com.example.fooddy.screen.HomeScreen
 import com.example.fooddy.ui.theme.FooddyTheme
 
 class MainActivity : ComponentActivity() {

@@ -63,6 +63,12 @@ val Typography = Typography(
         color = Color(0xFF000000),
         textAlign = TextAlign.Center,
         fontWeight = FontWeight(600)
+    ),
+    headlineSmall = TextStyle(
+        fontSize = 16.sp,
+        fontFamily = FontFamily(Font(R.font.roboto_medium)),
+        fontWeight = FontWeight(600),
+        color = Color(0xFF000000)
     )
 
 
