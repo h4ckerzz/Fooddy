@@ -5,39 +5,93 @@ import com.example.fooddy.model.Food
 
 object LocalFoodDataProvider {
     val defaultFood = getFoodData()[0]
-    fun getFoodData() : List<Food> {
+    fun getFoodData(): List<Food> {
         return listOf(
-            Food(imageResId = R.drawable.tomato, nameFoodId = R.string.veggie_tomato_mix, price = 5  ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
-            Food(imageResId = R.drawable.fried_chicken, nameFoodId = R.string.fried_chicken, price = 10 ),
+            Food(
+                imageResId = R.drawable.tomato,
+                nameFoodId = R.string.veggie_tomato_mix,
+                price = 5
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
+            Food(
+                imageResId = R.drawable.fried_chicken,
+                nameFoodId = R.string.fried_chicken,
+                price = 10
+            ),
 
-        )
+            )
     }
-    fun getFavouriteFoodData() : List<Food> {
+
+    fun getFavouriteFoodData(): List<Food> {
         return favouriteList
     }
+
     val favouriteList = mutableListOf<Food>()
     fun addFoodToFavourite(food: Food) {
         favouriteList.add(food)
     }
+
     fun removeFoodFromFavourite(food: Food) {
         favouriteList.remove(food)
     }
-    fun getOderFoodData() : List<Food> {
+
+    fun getOderFoodData(): List<Food> {
         return OrderList
     }
-    val OrderList = mutableListOf<Food>()
+
+    val OrderList = favouriteList
     fun addFoodToOder(food: Food) {
         OrderList.add(food)
     }
+
     fun removeFoodFromOrder(food: Food) {
         OrderList.remove(food)
+    }
+
+    fun totalPrice(): Int {
+        var total = 0
+        for (i in OrderList) {
+            total += i.price
+        }
+        return total
     }
 }

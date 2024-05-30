@@ -82,8 +82,6 @@ fun FavouriteScreen(navController: NavController) {
                     Spacer(modifier = Modifier.height(24.dp))
                     RowFood(food = food)
                 }
-                RowFood(food = LocalFoodDataProvider.defaultFood)
-
             }
             Spacer(modifier = Modifier.height(70.dp))
             Row(

@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.fooddy.screen.CheckOutScreen
 import com.example.fooddy.screen.FavouriteScreen
 import com.example.fooddy.screen.HomeScreen
 import com.example.fooddy.screen.LoginScreen
@@ -18,7 +19,8 @@ enum class FooddyScreen {
     HOME,
     FAVOURITE,
     PROFILE,
-    ORDER
+    ORDER,
+    CHECKOUT
 
 }
 @Composable
@@ -42,6 +44,9 @@ fun FooddyApp() {
         }
         composable(FooddyScreen.ORDER.name) {
             OderScreen(navController = navController)
+        }
+        composable(FooddyScreen.CHECKOUT.name) {
+            CheckOutScreen(navController = navController )
         }
     }
 

@@ -6,9 +6,12 @@
     <string name="veggie_tomato_mix_price">10$</string>
     <string name="fried_chicken">Fried\n Chicken</string>
     <string name="title_favourite_screen">Favourite</string>
+    <string name="title_checkout_screen">Check out</string>
     <string name="title_order_screen">Order</string>
     <string name="title_profile_screen">My profile</string>
     <string name="payment_method_card">Card</string>
     <string name="payment_method_Bank_account">Bank Account</string>
     <string name="payment_method_PayPal">Paypal</string>"
+    <string name="door_delivery">Door delivery</string>"
+    <string name="pick_up">Pick up</string>"
 </resources>

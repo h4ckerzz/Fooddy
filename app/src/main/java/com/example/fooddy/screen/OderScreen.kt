@@ -39,7 +39,7 @@ import com.example.fooddy.ui.theme.Typography
 fun OderScreen(navController: NavController) {
     val verticalScroll = rememberScrollState()
     val heightBox = 102.dp
-    val foodList = LocalFoodDataProvider.favouriteList
+    val foodList = LocalFoodDataProvider.OrderList
     Surface(modifier = Modifier.background(Color(0xFFF5F5F8))) {
         Column(
             modifier = Modifier.fillMaxSize(1f)
@@ -78,7 +78,7 @@ fun OderScreen(navController: NavController) {
             }
             Spacer(modifier = Modifier.height(40.dp))
             TextButton(
-                onClick = { },
+                onClick = {navController.navigate(FooddyScreen.CHECKOUT.name)},
                 modifier = Modifier
                     .width(315.dp)
                     .height(70.dp)
